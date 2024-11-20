@@ -1,0 +1,154 @@
+Dưới đây là hướng dẫn chi tiết cách tổ chức và quản lý dự án **Monorepo** sử dụng một repository Git duy nhất, trong đó có nhiều **Module** và mỗi **Module** chứa nhiều **Session**. Phương pháp này giúp bạn quản lý tất cả các phần của dự án trong một repository duy nhất, giúp dễ dàng theo dõi, triển khai và phát triển.
+
+### **Cấu trúc thư mục của dự án**
+
+Dưới đây là cấu trúc thư mục mà bạn muốn có trong dự án của mình:
+
+```
+BE/
+├── Module1/
+│   ├── Session1/
+│   ├── Session2/
+│   ├── ...
+│   ├── Session10/
+├── Module2/
+│   ├── Session1/
+│   ├── Session2/
+│   ├── ...
+│   ├── Session10/
+├── Module3/
+│   ├── Session1/
+│   ├── Session2/
+│   ├── ...
+│   ├── Session10/
+```
+
+### **Các bước tổ chức Monorepo trong Git**
+
+#### **Bước 1: Tạo repository Git chính**
+
+1. **Tạo thư mục cho dự án**:
+   Đầu tiên, tạo một thư mục chính cho dự án và vào trong đó.
+   ```bash
+   mkdir BE
+   cd BE
+   ```
+
+2. **Khởi tạo Git repository**:
+   Tiếp theo, khởi tạo một Git repository trong thư mục này.
+   ```bash
+   git init
+   ```
+
+3. **Tạo `.gitignore`**:
+   Tạo tệp `.gitignore` để loại bỏ các file và thư mục không cần thiết (như thư mục build, file cấu hình IDE, v.v.). Đây là ví dụ `.gitignore` cho dự án Java:
+   ```text
+   # Ignore build directories
+   /target/
+   /bin/
+   /out/
+
+   # Ignore IDE configuration files
+   .idea/
+   .vscode/
+
+   # Ignore OS-specific files
+   .DS_Store
+   Thumbs.db
+   ```
+
+4. **Thêm tệp `.gitignore` vào Git**:
+   ```bash
+   git add .gitignore
+   git commit -m "Add .gitignore file"
+   ```
+
+#### **Bước 2: Tạo cấu trúc thư mục cho các Module và Session**
+
+1. **Tạo các thư mục cho Module và Session**:
+   Tạo các thư mục con cho từng `Module`, và mỗi `Module` sẽ có các thư mục con cho từng `Session`. Bạn có thể làm điều này bằng cách thủ công hoặc dùng lệnh sau trong terminal:
+
+   ```bash
+   mkdir -p Module1/Session1 Module1/Session2 Module1/Session3
+   mkdir -p Module2/Session1 Module2/Session2 Module2/Session3
+   mkdir -p Module3/Session1 Module3/Session2 Module3/Session3
+   ```
+
+2. **Thêm tệp README cho mỗi Module và Session (tùy chọn)**:
+   Để giúp dễ dàng theo dõi và ghi chú về mỗi Module và Session, bạn có thể thêm các tệp `README.md` cho mỗi thư mục. Điều này giúp người khác dễ dàng hiểu mục đích và cấu trúc của từng phần trong dự án.
+
+   Ví dụ:
+   ```bash
+   echo "# Module1 - Authentication" > Module1/README.md
+   echo "# Session1 - Login Feature" > Module1/Session1/README.md
+   ```
+
+#### **Bước 3: Commit và push lên Git remote**
+
+1. **Thêm các thay đổi vào Git**:
+   Sau khi tạo cấu trúc thư mục, bạn cần thêm và commit các thay đổi vào Git.
+   ```bash
+   git add .
+   git commit -m "Add project structure for BE with Modules and Sessions"
+   ```
+
+2. **Tạo một repository remote trên GitHub (hoặc GitLab)**:
+   Truy cập vào GitHub hoặc GitLab và tạo một repository mới (chẳng hạn gọi là `BE`). Sau khi tạo xong, sao chép URL của repository.
+
+3. **Đẩy dự án lên Git remote**:
+   Liên kết repository local với remote và đẩy dữ liệu lên.
+   ```bash
+   git remote add origin <URL-of-your-remote-repository>
+   git push -u origin main
+   ```
+
+#### **Bước 4: Phát triển trong từng Session và Module**
+
+1. **Làm việc trong từng Session**:
+   Khi phát triển tính năng hoặc sửa lỗi trong một Session, bạn chỉ cần làm việc trực tiếp trong thư mục `SessionX` tương ứng. Ví dụ, nếu bạn phát triển tính năng cho `Session1` của `Module1`, bạn chỉ cần làm việc trong thư mục `Module1/Session1`.
+
+2. **Theo dõi thay đổi và commit**:
+   Mỗi khi bạn thay đổi mã nguồn trong các Session, nhớ thêm và commit các thay đổi.
+   ```bash
+   git add Module1/Session1
+   git commit -m "Complete login feature in Session1 of Module1"
+   ```
+
+3. **Đẩy thay đổi lên Git remote**:
+   Khi hoàn thành thay đổi, đẩy chúng lên Git remote.
+   ```bash
+   git push origin main
+   ```
+
+#### **Bước 5: Quản lý các thay đổi cho từng Module**
+
+1. **Cập nhật Module**:
+   Nếu bạn thực hiện thay đổi trong một Module cụ thể và muốn cập nhật cấu trúc của nó, bạn chỉ cần thay đổi trong thư mục tương ứng (ví dụ: `Module2/Session3`), rồi thêm, commit và đẩy thay đổi.
+
+2. **Quản lý các tính năng trong Module**:
+   Nếu bạn đang làm việc trên nhiều tính năng trong một Module (ví dụ: `Module3`), bạn có thể sử dụng nhánh Git để quản lý các tính năng đó. Tạo nhánh mới cho mỗi tính năng và phát triển tính năng đó trên nhánh riêng biệt:
+   ```bash
+   git checkout -b feature-new-session
+   ```
+
+   Sau khi tính năng hoàn thành, bạn có thể merge nhánh này vào nhánh chính (`main`).
+
+#### **Bước 6: Quản lý và bảo trì dự án**
+
+1. **Quản lý Version**:
+   Mỗi Module và Session đều có thể có các thay đổi riêng biệt, vì vậy bạn có thể dễ dàng theo dõi phiên bản của mỗi phần trong dự án thông qua Git commit lịch sử. Bạn có thể sử dụng các nhánh để phát triển các tính năng mới và sau đó merge vào nhánh chính khi hoàn thành.
+
+2. **Cập nhật README.md**:
+   Cập nhật tệp `README.md` trong thư mục chính và các Module khi có thay đổi lớn, giúp các thành viên khác trong nhóm dễ dàng nắm bắt được tiến độ và cấu trúc dự án.
+
+---
+
+### **Tóm lại**
+
+- **Monorepo** là phương pháp tổ chức tất cả các phần của dự án trong một Git repository duy nhất. Mỗi Module là một thư mục con, và mỗi Module chứa nhiều Session.
+- Phương pháp này giúp bạn dễ dàng theo dõi toàn bộ dự án và làm việc với các phần khác nhau mà không cần quản lý nhiều repository.
+- Để bắt đầu, bạn chỉ cần khởi tạo một Git repository chính, tạo cấu trúc thư mục cho các Module và Session, và sau đó commit và push dự án lên Git remote.
+
+Monorepo rất hữu ích khi bạn muốn phát triển và quản lý nhiều phần của một dự án trong cùng một repository mà không phải lo lắng về việc quản lý các repository riêng biệt.
+
+Nếu bạn gặp bất kỳ vấn đề nào khi thực hiện, đừng ngần ngại hỏi thêm nhé! 😊
