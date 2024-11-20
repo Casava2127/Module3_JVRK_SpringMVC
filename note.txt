@@ -1,0 +1,49 @@
+Để chỉ định thêm **một thư mục cụ thể** lên Git mà không phải thêm toàn bộ thư mục, bạn có thể làm theo các bước sau:
+
+### **1. Thêm thư mục vào Staging Area**
+
+Để thêm một thư mục cụ thể vào Git, bạn sử dụng lệnh `git add` và chỉ định tên thư mục mà bạn muốn thêm.
+
+Giả sử bạn muốn thêm thư mục `JDBC`, bạn có thể sử dụng lệnh sau:
+
+```bash
+git add JDBC/
+```
+
+Lệnh này sẽ chỉ thêm thư mục `JDBC` (và các tệp trong thư mục này) vào **Staging Area**, sẵn sàng để commit.
+
+### **2. Kiểm tra lại trạng thái với `git status`**
+
+Sau khi thực hiện lệnh `git add JDBC/`, bạn có thể kiểm tra trạng thái của Git bằng cách sử dụng:
+
+```bash
+git status
+```
+
+Lệnh này sẽ hiển thị các thay đổi đã được thêm vào Staging Area và cho bạn biết liệu bạn có cần thêm bất kỳ tệp nào khác.
+
+### **3. Commit thay đổi**
+
+Khi thư mục `JDBC` đã được thêm vào Staging Area, bạn có thể commit các thay đổi:
+
+```bash
+git commit -m "Thêm thư mục JDBC"
+```
+
+### **4. Đẩy thay đổi lên Git remote**
+
+Cuối cùng, đẩy các thay đổi lên Git remote (ví dụ GitHub):
+
+```bash
+git push origin main
+```
+
+### **Lưu ý:**
+- Nếu bạn gặp phải vấn đề như `.gitignore` loại trừ thư mục hoặc tệp bạn muốn thêm, bạn có thể sửa lại file `.gitignore` để không loại trừ thư mục cụ thể đó (như đã hướng dẫn trong các câu trả lời trước).
+- Nếu bạn chỉ muốn thêm **một số tệp cụ thể** trong thư mục `JDBC` mà không phải toàn bộ thư mục, bạn có thể thêm các tệp đó một cách cụ thể, ví dụ:
+
+  ```bash
+  git add JDBC/filename1.java JDBC/filename2.java
+  ```
+
+Nếu bạn có thêm bất kỳ câu hỏi nào hoặc gặp vấn đề, đừng ngần ngại hỏi thêm nhé!
