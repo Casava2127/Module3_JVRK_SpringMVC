@@ -1,0 +1,81 @@
+Khi bạn thực hiện một thay đổi rất nhỏ trong một tệp (ví dụ: sửa một ký tự, thêm một dòng mới, hoặc thay đổi một khoảng trắng), Git vẫn có thể nhận diện được sự thay đổi và bạn có thể thêm những thay đổi đó vào Staging Area và commit chúng như bình thường.
+
+Tuy nhiên, nếu bạn muốn Git nhận diện các thay đổi nhỏ mà không gặp phải vấn đề gì, dưới đây là một số điều bạn có thể kiểm tra và làm:
+
+### **1. Kiểm tra trạng thái với `git status`**
+
+Trước tiên, hãy kiểm tra xem Git có nhận diện được sự thay đổi trong tệp hay không. Dùng lệnh:
+
+```bash
+git status
+```
+
+Nếu bạn thấy tệp có thay đổi, nó sẽ được liệt kê trong "Changes not staged for commit". Nếu không có thay đổi, Git sẽ hiển thị thông báo "nothing to commit, working tree clean".
+
+### **2. Thêm thay đổi vào Staging Area**
+
+Sau khi Git nhận diện sự thay đổi trong tệp, bạn có thể thêm tệp vào Staging Area bằng cách sử dụng lệnh `git add`:
+
+- Nếu bạn muốn thêm một tệp cụ thể (ví dụ: `file.txt`):
+  ```bash
+  git add file.txt
+  ```
+
+- Nếu bạn muốn thêm tất cả tệp có thay đổi (bao gồm cả những thay đổi nhỏ):
+  ```bash
+  git add -A
+  ```
+
+### **3. Kiểm tra sự thay đổi nhỏ**
+
+Một cách để kiểm tra các thay đổi nhỏ là sử dụng lệnh `git diff`, sẽ hiển thị sự khác biệt giữa phiên bản hiện tại và phiên bản trước đó của tệp.
+
+- Để xem sự khác biệt trong tất cả các tệp đã thay đổi:
+  ```bash
+  git diff
+  ```
+
+- Để xem sự khác biệt của một tệp cụ thể:
+  ```bash
+  git diff file.txt
+  ```
+
+Lệnh này sẽ hiển thị các sự thay đổi giữa phiên bản trước đó và hiện tại của tệp, bao gồm sự thay đổi nhỏ như thay đổi một ký tự hay khoảng trắng.
+
+### **4. Commit thay đổi**
+
+Sau khi bạn đã thêm các tệp vào Staging Area, bạn có thể commit chúng:
+
+```bash
+git commit -m "Cập nhật các thay đổi nhỏ"
+```
+
+### **5. Đẩy thay đổi lên Git remote**
+
+Sau khi commit, đừng quên đẩy thay đổi của bạn lên Git remote (như GitHub) để lưu lại và chia sẻ:
+
+```bash
+git push origin main
+```
+
+### **6. Kiểm tra cấu hình của Git nếu không nhận diện thay đổi nhỏ**
+
+Nếu Git không nhận diện các thay đổi nhỏ (ví dụ, bạn đã thay đổi một ký tự nhưng Git không ghi nhận), có thể do cấu hình của Git không được thiết lập đúng để nhận diện thay đổi ở cấp độ tệp.
+
+Để kiểm tra, bạn có thể thay đổi cấu hình nhận diện thay đổi của Git:
+
+- Kiểm tra cấu hình theo dõi thay đổi:
+  ```bash
+  git config --global core.autocrlf true
+  ```
+
+Cấu hình này có thể giúp Git nhận diện các thay đổi nhỏ, đặc biệt là các thay đổi trong ký tự kết thúc dòng (line endings) trên các hệ điều hành khác nhau (Windows và macOS/Linux).
+
+---
+
+### **Tóm lại**:
+- **Git vẫn nhận diện các thay đổi nhỏ** trong tệp, miễn là bạn thêm chúng vào Staging Area (với `git add`).
+- Kiểm tra các thay đổi với `git status` và `git diff`.
+- Nếu Git không nhận diện thay đổi nhỏ, kiểm tra cấu hình của Git và thử lại.
+
+Nếu bạn vẫn gặp vấn đề, đừng ngần ngại yêu cầu thêm trợ giúp! 😊
