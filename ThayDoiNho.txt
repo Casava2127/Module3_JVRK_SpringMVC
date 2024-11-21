@@ -1,6 +1,6 @@
 Khi bạn thực hiện một thay đổi rất nhỏ trong một tệp (ví dụ: sửa một ký tự, thêm một dòng mới, hoặc thay đổi một khoảng trắng), Git vẫn có thể nhận diện được sự thay đổi và bạn có thể thêm những thay đổi đó vào Staging Area và commit chúng như bình thường.
 
-
+co thay doi nho
 
 
 
