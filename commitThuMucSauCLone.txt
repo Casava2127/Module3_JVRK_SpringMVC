@@ -22,3 +22,7 @@ Dường như thư mục `ra_jv240711_md3_session06_validator_dto` trong dự á
      git commit -m "Xóa submodule ra_jv240711_md3_session06_validator_dto và chuyển thành thư mục bình thường"
      git push origin main
      ```
+
+
+sau đó đổi tên thư mục
+git add . -> commit - > push
