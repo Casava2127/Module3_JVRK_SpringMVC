@@ -26,3 +26,64 @@ Dường như thư mục `ra_jv240711_md3_session06_validator_dto` trong dự á
 
 sau đó đổi tên thư mục
 git add . -> commit - > push
+lấy dựa án về - > sao lưu thư mục cần sao - > đánh thành bản riêng, commit - > đồng bộ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------
+Có vẻ như thư mục `ra_jv240711_md2_session16_rename1` đang được Git nhận diện là untracked (chưa được theo dõi), và bạn không thể xóa nó bằng lệnh `git rm --cached` vì nó chưa được thêm vào Git. Để xử lý tình huống này, bạn có thể thực hiện một số bước sau:
+
+### Các bước xử lý:
+
+1. **Xác nhận thư mục là untracked**:
+   Vì thư mục `ra_jv240711_md2_session16_rename1` là untracked (theo kết quả từ `git status`), bạn cần thêm nó vào Git trước khi thực hiện các thao tác khác. Bạn có thể thêm nó vào staging area bằng lệnh:
+
+   ```bash
+   git add ra_jv240711_md2_session16_rename1
+   ```
+
+2. **Xóa thư mục khỏi Git**:
+   Sau khi đã thêm thư mục vào Git (nếu bạn muốn giữ lại nó trong Git nhưng xóa khỏi kho Git), bạn có thể thực hiện xóa thư mục như sau:
+
+   ```bash
+   git rm --cached ra_jv240711_md2_session16_rename1
+   ```
+
+3. **Nếu bạn không muốn theo dõi thư mục**:
+   Nếu bạn không muốn Git theo dõi thư mục này, và chỉ muốn xóa nó khỏi kho Git (mà không ảnh hưởng đến hệ thống tệp của bạn), bạn có thể thực hiện các bước sau:
+
+   - Thêm thư mục vào `.gitignore` (nếu chưa có), để Git không theo dõi nó trong tương lai.
+   - Sau đó xóa thư mục khỏi kho Git:
+
+     ```bash
+     git rm -r --cached ra_jv240711_md2_session16_rename1
+     ```
+
+   Lệnh này sẽ xóa thư mục khỏi kho Git nhưng không ảnh hưởng đến thư mục trong thư mục làm việc của bạn.
+
+4. **Commit và đẩy lên remote**:
+   Sau khi đã thực hiện thao tác cần thiết, bạn có thể commit và đẩy thay đổi lên remote:
+
+   ```bash
+   git commit -m "Xóa thư mục ra_jv240711_md2_session16_rename1 khỏi git"
+   git push origin main
+   ```
+
+### Tóm lại:
+
+- Thư mục `ra_jv240711_md2_session16_rename1` hiện đang là untracked, bạn cần phải thêm nó vào Git trước khi có thể thực hiện thao tác `git rm`.
+- Nếu bạn muốn xóa thư mục khỏi kho Git nhưng giữ nó trên hệ thống tệp của mình, hãy sử dụng `git rm --cached`.
+
+Hãy thử các bước này và xem liệu chúng có giải quyết vấn đề của bạn không!
