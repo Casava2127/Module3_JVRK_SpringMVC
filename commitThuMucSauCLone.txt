@@ -1,0 +1,24 @@
+Dường như thư mục `ra_jv240711_md3_session06_validator_dto` trong dự án của bạn cũng là một **submodule Git** (một repository con được nhúng trong repository chính của bạn). Điều này có nghĩa là bạn không thể thêm nó trực tiếp như một thư mục bình thường vào Git mà không làm theo quy trình đúng cho submodule.
+
+### Giải pháp:
+
+1. **Nếu bạn muốn loại bỏ submodule và chuyển thư mục thành một thư mục bình thường**:
+   - **Gỡ bỏ submodule khỏi Git**: Sử dụng lệnh sau để gỡ bỏ submodule:
+
+     ```bash
+     git rm --cached ra_jv240711_md3_session06_validator_dto
+     ```
+
+   - **Xóa thư mục `.git` bên trong thư mục con (nếu có)**: Thư mục `ra_jv240711_md3_session06_validator_dto` có thể chứa một thư mục `.git`, bạn cần xóa thư mục này để biến nó thành một thư mục bình thường.
+
+     ```bash
+     rm -rf ra_jv240711_md3_session06_validator_dto/.git
+     ```
+
+   - **Commit các thay đổi**: Sau khi loại bỏ submodule và làm sạch thư mục, hãy commit các thay đổi:
+
+     ```bash
+     git add .
+     git commit -m "Xóa submodule ra_jv240711_md3_session06_validator_dto và chuyển thành thư mục bình thường"
+     git push origin main
+     ```
