@@ -1,1 +1,3 @@
 đưa ben lap len -> git pull bên pc ve
+
+Cập nhật dự án bên lap/pc -> push lên -> bên pc/lap pull về -> cập nhật và push lên lại
