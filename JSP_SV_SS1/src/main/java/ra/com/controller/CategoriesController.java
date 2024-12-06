@@ -1,5 +1,5 @@
 package ra.com.controller; // Khai báo package cho lớp này, giúp tổ chức mã nguồn theo module.
-
+// servlet
 import ra.com.entity.Categories; // Import lớp Categories từ package ra.com.entity.
 import ra.com.service.CategoriesService; // Import interface CategoriesService từ package ra.com.service.
 import ra.com.service.imp.CategoriesServiceImp; // Import lớp implement của CategoriesService từ package ra.com.service.imp.

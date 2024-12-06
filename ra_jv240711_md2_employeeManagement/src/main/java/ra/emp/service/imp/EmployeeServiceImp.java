@@ -27,4 +27,20 @@ public class EmployeeServiceImp implements EmployeeService {
     public boolean create(Employee emp) {
         return employeeRepository.create(emp);
     }
+
+    @Override
+    public Employee findById(String id){
+        return employeeRepository.findById(id);
+    }
+    @Override
+    public boolean updateEmp(Employee emp) {
+        return employeeRepository.updateEmp(emp);
+    }
+
+    @Override
+    public boolean deleteEmp(String id) {
+        return employeeRepository.delete(id);
+    }
+
+
 }

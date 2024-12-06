@@ -1,3 +1,4 @@
+<jsp:useBean id="catalog" scope="request" type="javax.xml.catalog.AltCatalog"/>
 <%--
   Created by IntelliJ IDEA.
   User: This MC

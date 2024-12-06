@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create New Employee</title>
+    <title>UpdateEmployee</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,31 +43,33 @@
     </style>
 </head>
 <body>
-<h1>Create New Employee</h1>
-<form action="<%=request.getContextPath()%>/employeeController/create" method="post">
+<h1>Update  Employee</h1>
+<form action="<%=request.getContextPath()%>/employeeController/update" method="post">
+
     <!-- Emp_id: Primary Key -->
     <label for="empId">EmpId:</label>
-    <input type="text" id="empId" name="empId" maxlength="5" required/>
+    <input type="text" id="empId" name="empId" maxlength="5" required value="${employee.empId}"/>
 
     <!-- Emp_Name: Not null -->
     <label for="empName">EmpName:</label>
-    <input type="text" id="empName" name="empName" maxlength="100" required/>
+    <input type="text" id="empName" name="empName" maxlength="100" required value="${employee.empName}"/>
 
     <!-- Emp_bod: Not null -->
     <label for="bod">Birth Of Date:</label>
-    <input type="date" id="bod" name="bod" required/>
+    <input type="date" id="bod" name="bod" required value="${employee.bod}"/>
 
     <!-- Emp_address: Not null -->
     <label for="empAddress">Address:</label>
-    <textarea id="empAddress" name="empAddress" rows="3" required></textarea>
+    <textarea id="empAddress" name="empAddress" rows="3" required>${employee.empAddress}</textarea>
+
 
     <!-- Emp_phone: Not null, unique -->
     <label for="empPhone">Phone:</label>
-    <input type="text" id="empPhone" name="empPhone" maxlength="15" required/>
+    <input type="text" id="empPhone" name="empPhone" maxlength="15" value="${employee.empPhone}" required/>
 
     <!-- Emp_rate: Not null, check > 0 -->
     <label for="empRate">Salary Rate:</label>
-    <input type="number" id="empRate" name="empRate" step="0.01" min="0.01" required/>
+    <input type="number" id="empRate" name="empRate" step="0.01" min="0.01" value="${employee.empRate}" required/>
 
     <!-- Dept_id: Foreign Key -->
     <label for="deptId">Choose Department:</label>
@@ -86,7 +88,7 @@
     </select>
 
     <!-- Submit -->
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Update"/>
 </form>
 </body>
 </html>

@@ -9,7 +9,7 @@ public class ConnectionDB {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/bookmanager_db";
     private static final String USER_NAME = "root";
-    private static final String PASSWORD = "1234$";
+    private static final String PASSWORD = "123456";
 
     public static Connection openConnection() {
         Connection conn = null;

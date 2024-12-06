@@ -32,6 +32,7 @@ public class EmployeeController {
         return "employees";
     }
 
+
     @GetMapping("/initCreate")
     public String initCreateEmployee(Model model) {
         Employee employee = new Employee();
@@ -40,10 +41,35 @@ public class EmployeeController {
         model.addAttribute("listDepartments", listDepartments);
         return "newEmployee";
     }
+
     @PostMapping("/create")
     public String createEmployee(Employee employee) {
         boolean result = employeeService.create(employee);
-        if (result){
+        if (result) {
+            return "redirect:findAll";
+        }
+        return "error";
+    }
+    @GetMapping("/initEdit")
+    public String initEditEmployee(String empId, Model model) {
+        Employee employeeUpdate = employeeService.findById(empId);
+        List<Department> listDepartmentsUpdate = departmentService.findAllActive();
+        model.addAttribute("employee", employeeUpdate);
+        model.addAttribute("listDepartments", listDepartmentsUpdate);
+        return "editEmployee";
+    }
+    @PostMapping("/update")
+    public String updateEmployee(Employee employee) {
+        boolean result = employeeService.updateEmp(employee);
+        if (result) {
+            return "redirect:findAll";
+        }
+        return "error";
+    }
+    @GetMapping("/delete")
+    public String deleteEmployee(String empId) {
+        boolean result = employeeService.deleteEmp(empId);
+        if (result) {
             return "redirect:findAll";
         }
         return "error";

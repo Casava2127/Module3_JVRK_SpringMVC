@@ -20,6 +20,30 @@ public class DepartmentServiceImp implements DepartmentService {
 
     @Override
     public List<Department> findAllActive() {
-        return departmentRepository.findAllActive();
+        return departmentRepository.findAll();
     }
+
+
+
+    @Override
+    public boolean updateDepartment(Department department) {
+        return departmentRepository.update(department);
+    }
+
+    @Override
+    public Department findById(int id) {
+        return departmentRepository.findById(id);
+    }
+
+    @Override
+    public boolean create(Department department) {
+        return departmentRepository.create(department);
+    }
+    @Override
+    public boolean delete(int id) {
+        return departmentRepository.delete(id);
+    }
+
+
+
 }

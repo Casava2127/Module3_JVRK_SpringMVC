@@ -1,5 +1,4 @@
 package ra.emp.model;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,9 +14,13 @@ import java.util.Date;
 public class Employee {
     private String empId;
     private String empName;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private String empAddress; // Không cần @DateTimeFormat
+    private String empPhone;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // Áp dụng định dạng cho bod
     private Date bod;
+
     private int deptId;
-    private String deptName;
+    private String empRate;
     private int status;
 }

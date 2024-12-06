@@ -11,6 +11,12 @@ import lombok.Setter;
 @Setter
 public class Department {
     private int deptId;
-    private String deptName;
-    private boolean status;
+    private String deptName;       // Tên phòng ban
+    private String deptDescription; // Mô tả phòng ban
+    private boolean deptStatus;     // Trạng thái phòng ban
+
+
+    public boolean getDeptStatus() {
+        return deptStatus;
+    }
 }

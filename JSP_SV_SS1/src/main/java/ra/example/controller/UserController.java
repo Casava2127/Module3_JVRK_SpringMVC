@@ -26,7 +26,12 @@ public class UserController extends HttpServlet {
             findAll(request, response);
         }else if(action.equals("create")){
             request.getRequestDispatcher("/viewsUser/create.jsp").forward(request, response);
-        }else if(action.equals("initUpdate"))
+        }else if(action.equals("initUpdate")){
+            int userId = Integer.parseInt(request.getParameter("userId"));
+            User user = userService.findById(userId);
+            request.setAttribute("user", user);
+            request.getRequestDispatcher("/viewsUser/update.jsp").forward(request, response);
+        }
 
     }
     public void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

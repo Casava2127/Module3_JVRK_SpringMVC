@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<a href="">Quản lý phòng ban</a>
+<a href="departmentController/findAll">Quản lý phòng ban</a>
 <a href="employeeController/findAll">Quản lý nhân viên</a>
 </body>
 </html>

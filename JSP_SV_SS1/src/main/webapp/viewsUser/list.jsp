@@ -27,6 +27,7 @@
     <th>Selection</th>
 </thead>
 <tbody>
+<jsp:useBean id="users" scope="request" type="java.util.List"/>
 <c:forEach items="${users}" var="user" varStatus="loop">
     <tr>
 <%--        theo entity --%>
