@@ -1,5 +1,5 @@
 Dưới đây là hướng dẫn chi tiết cách tổ chức và quản lý dự án **Monorepo** sử dụng một repository Git duy nhất, trong đó có nhiều **Module** và mỗi **Module** chứa nhiều **Session**. Phương pháp này giúp bạn quản lý tất cả các phần của dự án trong một repository duy nhất, giúp dễ dàng theo dõi, triển khai và phát triển.
-
+thay doi nho
 ### **Cấu trúc thư mục của dự án**
 
 Dưới đây là cấu trúc thư mục mà bạn muốn có trong dự án của mình:
