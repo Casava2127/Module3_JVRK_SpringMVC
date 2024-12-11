@@ -25,40 +25,46 @@ import java.util.List;
 public class DepartmentServiceImp implements DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
-    // Tiêm đối tượng `DepartmentRepository` vào trong lớp này. `DepartmentRepository` sẽ cung cấp các phương thức để thao tác với cơ sở dữ liệu.
+    // Tiêm đối tượng `DepartmentRepository` vào trong lớp này. `DepartmentRepository` sẽ cung cấp các phương thức để
+    // thao tác với cơ sở dữ liệu.
 
     @Override
     public List<Department> findAll() {
         return departmentRepository.findAll();
-        // Phương thức `findAll()` gọi phương thức `findAll()` của `departmentRepository` để lấy tất cả các đối tượng `Department` từ cơ sở dữ liệu.
+        // Phương thức `findAll()` gọi phương thức `findAll()` của `departmentRepository` để lấy tất cả các đối tượng `Department`
+        // từ cơ sở dữ liệu.
         // Kết quả trả về là một danh sách các `Department`.
     }
 
     @Override
     public Department findById(int deptId) {
         return departmentRepository.findById(deptId);
-        // Phương thức `findById(int deptId)` gọi phương thức `findById(deptId)` của `departmentRepository` để tìm kiếm một đối tượng `Department` theo `deptId`.
+        // Phương thức `findById(int deptId)` gọi phương thức `findById(deptId)` của `departmentRepository` để
+        // tìm kiếm một đối tượng `Department` theo `deptId`.
         // Trả về một đối tượng `Department` tìm thấy theo `deptId`.
     }
 
     @Override
     public boolean save(Department department) {
         return departmentRepository.save(department);
-        // Phương thức `save(Department department)` gọi phương thức `save(department)` của `departmentRepository` để lưu đối tượng `Department` vào cơ sở dữ liệu.
+        // Phương thức `save(Department department)` gọi phương thức `save(department)` của `departmentRepository`
+        // để lưu đối tượng `Department` vào cơ sở dữ liệu.
         // Trả về giá trị `true` nếu lưu thành công, `false` nếu thất bại.
     }
 
     @Override
     public boolean update(Department department) {
         return departmentRepository.update(department);
-        // Phương thức `update(Department department)` gọi phương thức `update(department)` của `departmentRepository` để cập nhật thông tin của đối tượng `Department` trong cơ sở dữ liệu.
+        // Phương thức `update(Department department)` gọi phương thức `update(department)` của `departmentRepository`
+        // để cập nhật thông tin của đối tượng `Department` trong cơ sở dữ liệu.
         // Trả về `true` nếu cập nhật thành công, `false` nếu thất bại.
     }
 
     @Override
     public boolean delete(int deptId) {
         return departmentRepository.delete(deptId);
-        // Phương thức `delete(int deptId)` gọi phương thức `delete(deptId)` của `departmentRepository` để xóa một đối tượng `Department` theo `deptId`.
+        // Phương thức `delete(int deptId)` gọi phương thức `delete(deptId)` của `departmentRepository`
+        // để xóa một đối tượng `Department` theo `deptId`.
         // Trả về `true` nếu xóa thành công, `false` nếu thất bại.
     }
 }
