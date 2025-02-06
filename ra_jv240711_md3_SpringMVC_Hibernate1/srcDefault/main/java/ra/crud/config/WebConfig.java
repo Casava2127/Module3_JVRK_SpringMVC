@@ -1,6 +1,7 @@
-package ra.crud.config;
+package crud.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import ra.crud.config.AppConfig;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override

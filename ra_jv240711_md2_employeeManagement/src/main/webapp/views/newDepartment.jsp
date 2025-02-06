@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Create New Department</h1>
-<form action="/departmentController/create" method="post">
+<form action="${pageContext.request.contextPath}/departmentController/create" method="post">
     <label for="deptName">Name:</label>
     <input type="text" id="deptName" name="deptName" required>
     <br><br>

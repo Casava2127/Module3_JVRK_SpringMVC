@@ -1,7 +1,9 @@
-Để làm một ví dụ lớn hơn và có nhiều chức năng hơn trong ứng dụng Spring MVC, tôi sẽ xây dựng một ứng dụng quản lý sách đơn giản. Dự án này sẽ có các tính năng cơ bản như thêm sách, hiển thị danh sách sách và tìm kiếm sách. Dưới đây là cấu trúc thư mục, các lớp và phân tích chi tiết về luồng chạy của Spring MVC.
+Để làm một ví dụ lớn hơn và có nhiều chức năng hơn trong ứng dụng Spring MVC, tôi sẽ xây dựng một ứng dụng quản lý sách đơn giản. 
+Dự án này sẽ có các tính năng cơ bản như thêm sách, hiển thị danh sách sách và tìm kiếm sách.
+Dưới đây là cấu trúc thư mục, các lớp và phân tích chi tiết về luồng chạy của Spring MVC.
 https://tutorialspedia.com/how-java-spring-mvc-works-spring-mvc-request-flow-explained-step-by-step/
 ### 1. Cấu trúc thư mục của dự án
-
+WEb 1 khối và hướng dịch vụ
 ```
 book-app
 │
@@ -275,7 +277,8 @@ public class BookService {
 }
 ```### Phân tích chi tiết luồng chạy của ứng dụng Spring MVC
 
-Chúng ta sẽ phân tích luồng chạy chi tiết hơn dựa trên ví dụ ứng dụng quản lý sách, bắt đầu từ khi người dùng gửi yêu cầu đến khi hệ thống trả về kết quả.
+Chúng ta sẽ phân tích luồng chạy chi tiết hơn dựa trên ví dụ ứng dụng quản lý sách, 
+bắt đầu từ khi người dùng gửi yêu cầu đến khi hệ thống trả về kết quả.
 
 ### 1. **Khi người dùng truy cập vào URL `/books` để xem danh sách sách**
 

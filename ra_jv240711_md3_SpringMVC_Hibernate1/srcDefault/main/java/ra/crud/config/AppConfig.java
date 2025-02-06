@@ -1,4 +1,4 @@
-package ra.crud.config;
+package crud.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +40,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/EmployeeManager");
         dataSource.setUsername("root");
-        dataSource.setPassword("1234$");
+        dataSource.setPassword("123456");
         return dataSource;
     }
 

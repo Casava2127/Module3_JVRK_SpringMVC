@@ -8,6 +8,7 @@
 <ul>
     <li><a href="departmentController/findAll">Quản lý phòng ban</a></li>
     <li><a href="">Quản lý nhân viên</a></li>
+    <li><a href="employeeController/findAll">Quản lý EMP</a></li>
 </ul>
 
 </body>

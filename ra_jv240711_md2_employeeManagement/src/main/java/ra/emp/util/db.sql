@@ -88,6 +88,30 @@ END &&
 
 DELIMITER ;
 
+DELIMITER $$
+
+CREATE PROCEDURE AddDepartment(
+    IN dept_name VARCHAR(100),
+    IN dept_description TEXT,
+    IN dept_status BIT
+)
+BEGIN
+    IF EXISTS (SELECT 1 FROM Department WHERE Dept_name = dept_name) THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Department name already exists.';
+    ELSE
+        INSERT INTO Department (Dept_name, Dept_description, Dept_status)
+        VALUES (dept_name, dept_description, dept_status);
+    END IF;
+END $$
+
+DELIMITER ;
+
+
+
+
+
+
 # procedure find_all_epm
 DELIMITER &&
 

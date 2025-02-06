@@ -63,20 +63,31 @@ public class DepartmentRepositoryImp implements DepartmentRepository {
         Connection conn = null;
         CallableStatement callSt = null;
         boolean result = false;
+
         try {
+            // Open a database connection
             conn = ConnectionDB.openConnection();
-            // Sửa đổi để gọi đúng thủ tục với tất cả tham số
+
+            // Prepare the stored procedure call (assuming three parameters in AddDepartment)
             callSt = conn.prepareCall("{call AddDepartment(?,?,?)}");
-            callSt.setString(1, dept.getDeptName());
-            callSt.setString(2, dept.getDeptDescription());
-            callSt.setBoolean(3, dept.getDeptStatus());
+
+            // Set parameters
+            callSt.setString(1, dept.getDeptName());  // Department name
+            callSt.setString(2, dept.getDeptDescription());  // Department description
+            callSt.setBoolean(3, dept.getDeptStatus());  // Department status
+
+            // Execute the procedure
             callSt.executeUpdate();
-            result = true;
+            result = true; // Indicate success
         } catch (Exception ex) {
+            // Log the exception
+            System.err.println("Error while creating department: " + ex.getMessage());
             ex.printStackTrace();
         } finally {
+            // Close resources
             ConnectionDB.closeConnection(conn, callSt);
         }
+
         return result;
     }
 

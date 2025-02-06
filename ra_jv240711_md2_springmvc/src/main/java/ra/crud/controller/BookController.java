@@ -29,7 +29,6 @@ import java.util.List; // Dùng để lưu danh sách sách
 public class BookController {
 
     private final BookService bookService; // Khai báo đối tượng BookService để gọi các phương thức trong service
-
     // @Autowired: Inject BookServiceImp vào BookController qua constructor
     @Autowired
     public BookController(BookServiceImp bookServiceImp) {
