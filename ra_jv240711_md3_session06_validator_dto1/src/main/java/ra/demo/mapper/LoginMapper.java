@@ -7,7 +7,7 @@ import ra.demo.dto.response.LoginDtoResponse;
 import ra.demo.model.User;
 // Import các lớp cần thiết, bao gồm các DTO (`LoginDtoRequest`, `LoginDtoResponse`) và Entity (`User`).
 
-@Component
+@Component // bản chất chữ component ny là service + controller + repository = chung
 public class LoginMapper implements GenericMapper<LoginDtoRequest, User, LoginDtoResponse> {
     // Đánh dấu lớp này là một Spring Component, giúp Spring tự động phát hiện và quản lý nó.
     // `GenericMapper` là một interface chung, định nghĩa các phương thức chuyển đổi giữa request, entity, và response.
@@ -22,7 +22,7 @@ public class LoginMapper implements GenericMapper<LoginDtoRequest, User, LoginDt
         // user.setPassword(request.getPassword());
         // return user;
 
-        // Cách viết gọn hơn bằng builder:
+        // Cách viết gọn hơn bằng builder: -> thêm vào User.java
         return User.builder()
                 .userName(request.getUserName()) // Gán giá trị `userName` từ request vào entity.
                 .password(request.getPassword()) // Gán giá trị `password` từ request vào entity.

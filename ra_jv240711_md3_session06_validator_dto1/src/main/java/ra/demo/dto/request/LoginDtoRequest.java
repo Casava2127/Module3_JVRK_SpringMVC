@@ -27,3 +27,4 @@ public class LoginDtoRequest {
     // `@Size(min = 6)`: Đảm bảo trường `password` có độ dài tối thiểu là 6 ký tự.
     // Nếu vi phạm, thông báo lỗi "Mật khẩu tối thiểu 6 ký tự" sẽ hiển thị.
 }
+//Tóm lại: Lớp này giúp kiểm tra đầu vào của form đăng nhập, tránh trường hợp gửi thông tin sai lên server.

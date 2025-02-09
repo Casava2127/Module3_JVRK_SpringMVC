@@ -57,3 +57,4 @@ public class RegisterDtoRequest {
     private String address;
     // `@NotBlank`: Đảm bảo `address` không được để trống.
 }
+// ----> Nhận dữ liệu từ client khi người dùng đăng ký tài khoản mới.

@@ -23,3 +23,4 @@ public class LoginDtoResponse {
     private String fullName;
     // Thuộc tính `fullName`: Đại diện cho họ và tên đầy đủ của người dùng.
 }
+//Tóm lại: Khi đăng nhập thành công, backend sẽ trả về thông tin người dùng qua lớp này.

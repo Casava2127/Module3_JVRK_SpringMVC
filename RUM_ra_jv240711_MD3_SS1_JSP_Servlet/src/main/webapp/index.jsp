@@ -2,12 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Ecommerce</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+<%--<h1><%= "Ecommerce Management!" %></h1>--%>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<h1><%= "Category Management" %></h1>
+<ul>
+    <li><a href="${pageContext.request.contextPath}/CategoriesController?action=findAll">Quản lý danh mục</a></li>
+    <li><a href="">Quản lý sản phẩm</a></li>
+
+    <%--    <li><a href="${pageContext.request.contextPath}/UserController?action=findAll">Danh sach User</a></li>--%>
+
+</ul>
 </body>
 </html>
