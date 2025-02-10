@@ -41,7 +41,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/Upload_Cloundiary_db");
         dataSource.setUsername("root");
-        dataSource.setPassword("1234$");
+        dataSource.setPassword("123456");
         return dataSource;
     }
 
