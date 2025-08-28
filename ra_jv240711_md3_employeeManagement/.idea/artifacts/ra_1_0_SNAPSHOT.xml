@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ra-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/out/artifacts/ra_1_0_SNAPSHOT</output-path>
+    <root id="archive" name="ra-1.0-SNAPSHOT.war">
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>

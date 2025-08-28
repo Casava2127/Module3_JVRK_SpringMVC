@@ -1,0 +1,8 @@
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\Main.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_chat\ChatClient.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_chat\ChatServer.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_chat\IChatClient.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_chat\IChatServer.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_client\ClientMain.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_interface\Student.java
+C:\D\VscodePC\Java\TuHocJV\Module3_JVRK_SpringMVC\OntapSS3\RMI_DemoPC\src\rmi_interface\StudentService.java
